@@ -2,7 +2,7 @@
 
 > Pretty, minimal and fast ZSH prompt
 
-![screenshot](pure:.png)
+![screenshot](pure.png)
 
 ### Changes from the original repo
 
