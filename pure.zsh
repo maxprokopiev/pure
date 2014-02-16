@@ -27,28 +27,28 @@
 # %(?..) - prompt conditional %(condition.true.false)
 
 prompt_precmd() {
-	# git info
-	vcs_info
+  # git info
+  vcs_info
 }
 
 prompt_setup() {
-	prompt_opts=(cr subst percent)
+  prompt_opts=(cr subst percent)
 
-	autoload -Uz add-zsh-hook
-	autoload -Uz vcs_info
+  autoload -Uz add-zsh-hook
+  autoload -Uz vcs_info
 
-	add-zsh-hook precmd prompt_precmd
+  add-zsh-hook precmd prompt_precmd
 
-	zstyle ':vcs_info:*' enable git
+  zstyle ':vcs_info:*' enable git
   zstyle ':vcs_info:*' disable bzr cdv darcs mtn svk tla svn cvs
 
-	zstyle ':vcs_info:git*' formats ' %b'
-	zstyle ':vcs_info:git*' actionformats ' %b|%a'
+  zstyle ':vcs_info:git*' formats ' %b'
+  zstyle ':vcs_info:git*' actionformats ' %b|%a'
 
   # left prompt
-	PROMPT='%F{blue}%~%f %F{magenta}❯%f '
-	# right prompt
-	RPROMPT='%F{8}${vcs_info_msg_0_} %f'
+  PROMPT='%F{blue}%~%f %F{magenta}❯%f '
+  # right prompt
+  RPROMPT='%F{8}${vcs_info_msg_0_} %f'
 }
 
 prompt_setup "$@"
