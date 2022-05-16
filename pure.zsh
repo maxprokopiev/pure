@@ -46,7 +46,11 @@ prompt_setup() {
   zstyle ':vcs_info:git*' actionformats ' %b|%a'
 
   # left prompt
-  PROMPT='%F{blue}%~%f %F{magenta}❯%f '
+  if [ -n "${CODESPACES}" ]; then
+    PROMPT='%F{blue}%~%f [CS] %F{magenta}❯%f '
+  else
+    PROMPT='%F{blue}%~%f %F{magenta}❯%f '
+  fi
   # right prompt
   RPROMPT='%F{8}${vcs_info_msg_0_} %f'
 }
